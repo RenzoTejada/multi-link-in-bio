@@ -1,0 +1,186 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Multi Link in Bio\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-10 18:20+0000\n"
+"PO-Revision-Date: 2021-06-10 19:32+0000\n"
+"Last-Translator: Renzo Tejada\n"
+"Language-Team: Español de Perú\n"
+"Language: es_PE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.2; wp-5.7.2\n"
+"X-Domain: link-bio"
+
+#: link_admin.php:308
+msgid "Behance"
+msgstr "Behance"
+
+#: link_admin.php:117
+msgid "Choose page"
+msgstr "Elige la página"
+
+#: link_admin.php:318
+msgid "CodePen"
+msgstr "CodePen"
+
+#: link_admin.php:166
+msgid "Color Template"
+msgstr "Plantilla de colores"
+
+#: multi-link-in-bio.php:54
+msgid "Contact"
+msgstr "Contacto"
+
+#: link_admin.php:260
+msgid "DEV"
+msgstr "DEV"
+
+#: link_admin.php:359
+msgid "Email"
+msgstr "Email"
+
+#: link_admin.php:232
+msgid "Facebook"
+msgstr "Facebook"
+
+#: link_admin.php:421
+msgid "Facebook Pixel"
+msgstr ""
+
+#: link_admin.php:112
+msgid "General setting"
+msgstr "Configuración general"
+
+#: link_admin.php:269
+msgid "GitHub"
+msgstr "GitHub"
+
+#: link_admin.php:403
+msgid "Google Analytics ID"
+msgstr "Google Analytics ID"
+
+#: link_admin.php:397
+msgid "Google Analytics | Google Tag Manager | Facebook Pixel"
+msgstr "Google Analytics | Google Tag Manager | Facebook Pixel"
+
+#: link_admin.php:412
+msgid "Google Tag Manager"
+msgstr "Google Tag Manager"
+
+#: link_admin.php:354
+msgid "here"
+msgstr "Aquí"
+
+#: link_admin.php:352
+msgid "How to create WhatsApp link"
+msgstr "Cómo crear un enlace de WhatsApp"
+
+#. Author URI of the plugin
+msgid "https://renzotejada.com/"
+msgstr "https://renzotejada.com/"
+
+#. URI of the plugin
+msgid "https://renzotejada.com/multi-link-in-bio-para-wordpress/"
+msgstr "https://renzotejada.com/multi-link-in-bio-para-wordpress/"
+
+#: link_admin.php:241
+msgid "Instagram"
+msgstr "Instagram"
+
+#: link_admin.php:14
+msgid "Link in Bio"
+msgstr "Enlace en la biografía"
+
+#: link_admin.php:289
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: link_admin.php:36
+msgid "Links"
+msgstr "Links"
+
+#. Description of the plugin
+msgid ""
+"links can be added that redirect the user to a company's external "
+"communication channels, which can be other social networks or websites."
+msgstr ""
+"Se pueden añadir enlaces que redirijan al usuario a los canales de "
+"comunicación externos de una empresa, que pueden ser otras redes sociales o "
+"sitios web."
+
+#: link_admin.php:226
+msgid "Links Sociales"
+msgstr "Enlaces sociales"
+
+#: link_admin.php:299
+msgid "Medium"
+msgstr "Medium"
+
+#. Name of the plugin
+#: link_admin.php:13 link_admin.php:25
+msgid "Multi Link in Bio"
+msgstr "Multi Link in Bio"
+
+#. Author of the plugin
+msgid "Renzo Tejada"
+msgstr "Renzo Tejada"
+
+#: link_admin.php:196 link_admin.php:371 link_admin.php:434
+msgid "Save changes"
+msgstr "Guardar cambios"
+
+#: link_admin.php:182
+msgid "Select Color"
+msgstr "Selecciona el color"
+
+#: link_admin.php:139
+msgid "Select page"
+msgstr "Selecciona la página"
+
+#: link_admin.php:14 link_admin.php:32 multi-link-in-bio.php:40
+msgid "Settings"
+msgstr "Ajustes"
+
+#: link_admin.php:279
+msgid "StackOverflow"
+msgstr "StackOverflow"
+
+#: link_admin.php:158
+msgid "Sub Title"
+msgstr "Subtítulo"
+
+#: multi-link-in-bio.php:55
+msgid "Support"
+msgstr "Soporte"
+
+#: link_admin.php:150
+msgid "Title"
+msgstr "Título"
+
+#: link_admin.php:396
+msgid "Tracking"
+msgstr "Seguimiento"
+
+#: link_admin.php:40
+msgid "tracking"
+msgstr "seguimiento "
+
+#: link_admin.php:250
+msgid "Twitter"
+msgstr "Twitter"
+
+#: link_admin.php:337
+msgid "Web"
+msgstr "Web"
+
+#: link_admin.php:346
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: link_admin.php:328
+msgid "WordPress"
+msgstr "WordPress"
