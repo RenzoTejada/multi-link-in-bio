@@ -9,7 +9,7 @@
  * Plugin Name:       Multi Link in Bio
  * Plugin URI:        https://renzotejada.com/multi-link-in-bio-para-wordpress/
  * Description:       links can be added that redirect the user to a company's external communication channels, which can be other social networks or websites.
- * Version:           0.0.4
+ * Version:           0.0.5
  * Author:            Renzo Tejada
  * Author URI:        https://renzotejada.com/
  * License:           GNU General Public License v3.0
@@ -27,12 +27,12 @@ $plugin_link_bio_version = get_file_data(__FILE__, array('Version' => 'Version')
 
 define('Version_RT_Link_Bio', $plugin_link_bio_version['Version']);
 
-function link_bio_load_textdomain()
+function rt_link_bio_load_textdomain()
 {
     load_plugin_textdomain('link-bio', false, basename(dirname(__FILE__)) . '/language/');
 }
 
-add_action('init', 'link_bio_load_textdomain');
+add_action('init', 'rt_link_bio_load_textdomain');
 
 
 function rt_link_add_plugin_page_settings_link($links)
