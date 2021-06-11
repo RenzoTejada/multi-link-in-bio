@@ -8,7 +8,7 @@
     <link rel="icon" href="favicon.ico" type="image/png"/>
 
     <?php
-    $link_ga = get_option( 'link_ga' );
+    $link_ga = get_option( 'rt_multi_link_ga' );
     if ( $link_ga ) :
         ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -23,7 +23,7 @@
     <?php endif; ?>
 
     <?php
-    $link_gtm = get_option( 'link_gtm' );
+    $link_gtm = get_option( 'rt_multi_link_gtm' );
     if ( $link_gtm ) :
         ?>
 
@@ -38,7 +38,7 @@
     <?php endif; ?>
 
     <?php
-    $link_fbp = get_option( 'link_fbp' );
+    $link_fbp = get_option( 'rt_multi_link_fbp' );
     if ( $link_fbp ) :
         ?>
 
@@ -66,8 +66,8 @@
 </head>
 <body>
 <main>
-    <h1 class="intro"><?php echo get_option('link_setting_title'); ?></h1>
-    <h2 class="tagline"><?php echo get_option('link_setting_subtitle'); ?></h2>
+    <h1 class="intro"><?php echo esc_html(get_option('rt_multi_link_setting_title')); ?></h1>
+    <h2 class="tagline"><?php echo esc_html(get_option('rt_multi_link_setting_subtitle')); ?></h2>
     <h3 class="icons-social">
         <?php
         $links_rs = array(
