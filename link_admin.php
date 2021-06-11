@@ -37,7 +37,7 @@ function rt_link_submenu_settings_callback()
                 <a href="?page=link_settings&tab=tracking" class="nav-tab <?php
                 if (($_REQUEST['tab'] == "tracking")) {
                     print " nav-tab-active";
-                } ?>"><?php _e('tracking', 'link-bio') ?></a>
+                } ?>"><?php _e('Tracking', 'link-bio') ?></a>
             </h2>
             <?php
             switch ($_REQUEST['tab']) {
@@ -52,7 +52,6 @@ function rt_link_submenu_settings_callback()
                     rt_link_submenu_settings_general();
                     break;
             }
-
             ?>
         </div>
         <?php
@@ -61,7 +60,7 @@ function rt_link_submenu_settings_callback()
 
 function rt_link_submenu_settings_general()
 {
-    if (isset($_POST["btn_guardar_setting"])) {
+    if (isset($_POST["btn_guardar_setting"]) && check_admin_referer('nonce_guardar_setting', 'field_nonce_guardar_setting')) {
         $page_link_id = get_option('link_setting_page');
         $page_link_title = get_option('link_setting_title');
         $page_link_subtitle = get_option('link_setting_subtitle');
@@ -139,7 +138,7 @@ function rt_link_submenu_settings_general()
                         <option value=""><?php _e('Select page', 'link-bio') ?></option>
                         <?php foreach ($all_page as $page) {
                             $selected = ($page->ID == $page_link_id) ? 'selected' : ''; ?>
-                            <option value="<?php echo $page->ID ?>" <?php echo $selected; ?>><?php echo $page->post_title ?></option>
+                            <option value="<?php echo esc_html( $page->ID ); ?>" <?php echo esc_html ( $selected ); ?>><?php echo esc_html( $page->post_title ); ?></option>
                             <?php
                         } ?>
                     </select>
@@ -149,7 +148,7 @@ function rt_link_submenu_settings_general()
                 <th scope="row">
                     <label><?php _e('Title', 'link-bio') ?></label></th>
                 <td>
-                    <input name="title_link" type="text" id="title_link" value="<?php echo $page_link_title ?>"
+                    <input name="title_link" type="text" id="title_link" value="<?php echo esc_html( $page_link_title ); ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -157,7 +156,7 @@ function rt_link_submenu_settings_general()
                 <th scope="row">
                     <label><?php _e('Sub Title', 'link-bio') ?></label></th>
                 <td>
-                    <input name="subtitle_link" type="text" id="subtitle_link" value="<?php echo $page_link_subtitle ?>"
+                    <input name="subtitle_link" type="text" id="subtitle_link" value="<?php echo esc_html( $page_link_subtitle ); ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -182,7 +181,7 @@ function rt_link_submenu_settings_general()
                         <option value=""><?php _e('Select Color', 'link-bio') ?></option>
                         <?php foreach ($colors as $key => $color) {
                             $selected = ($key == $page_link_color) ? 'selected' : ''; ?>
-                            <option value="<?php echo $key ?>" <?php echo $selected; ?>><?php echo $color ?></option>
+                            <option value="<?php echo esc_html( $key ); ?>" <?php echo esc_html( $selected); ?>><?php echo esc_html( $color); ?></option>
                             <?php
                         } ?>
                     </select>
@@ -190,6 +189,7 @@ function rt_link_submenu_settings_general()
             </tr>
             </tbody>
         </table>
+        <?php wp_nonce_field('nonce_guardar_setting', 'field_nonce_guardar_setting'); ?>
         <p class="submit">
             <?php
             $attributes = array('id' => 'btn_guardar_setting');
@@ -201,7 +201,7 @@ function rt_link_submenu_settings_general()
 
 function rt_link_submenu_settings_links()
 {
-    if (isset($_POST["btn_guardar_links"])) {
+    if (isset($_POST["btn_guardar_links"]) && check_admin_referer('nonce_guardar_links', 'field_nonce_guardar_links')) {
 
         $links_rs = array(
             'fb', 'ig', 'twitter', 'dev', 'github', 'stackoverflow', 'linkedin', 'medium', 'behance', 'codepen', 'wp',
@@ -218,10 +218,7 @@ function rt_link_submenu_settings_links()
                 }
             }
         }
-
-
     }
-
     ?>
     <h2><?php _e('Links Sociales', 'link-bio') ?></h2>
     <form method="post" id="form_links" action="" novalidate="novalidate">
@@ -365,6 +362,7 @@ function rt_link_submenu_settings_links()
             </tr>
             </tbody>
         </table>
+        <?php wp_nonce_field('nonce_guardar_links', 'field_nonce_guardar_links'); ?>
         <p class="submit">
             <?php
             $attributes = array('id' => 'btn_guardar_links');
@@ -376,7 +374,7 @@ function rt_link_submenu_settings_links()
 
 function rt_link_submenu_settings_tracking()
 {
-    if (isset($_POST["btn_guardar_tracking"])) {
+    if (isset($_POST["btn_guardar_tracking"]) && check_admin_referer('nonce_guardar_tracking', 'field_nonce_guardar_tracking')) {
         $trackings = array(
             'ga', 'gtm', 'fbp',
         );
@@ -428,6 +426,7 @@ function rt_link_submenu_settings_tracking()
             </tr>
             </tbody>
         </table>
+        <?php wp_nonce_field('nonce_guardar_tracking', 'field_nonce_guardar_tracking'); ?>
         <p class="submit">
             <?php
             $attributes = array('id' => 'btn_guardar_tracking');

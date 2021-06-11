@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Multi Link in Bio\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-10 18:20+0000\n"
-"PO-Revision-Date: 2021-06-10 19:32+0000\n"
+"PO-Revision-Date: 2021-06-11 06:23+0000\n"
 "Last-Translator: Renzo Tejada\n"
 "Language-Team: Español de Perú\n"
 "Language: es_PE\n"
@@ -15,19 +15,19 @@ msgstr ""
 "X-Loco-Version: 2.5.2; wp-5.7.2\n"
 "X-Domain: link-bio"
 
-#: link_admin.php:308
+#: link_admin.php:305
 msgid "Behance"
 msgstr "Behance"
 
-#: link_admin.php:117
+#: link_admin.php:116
 msgid "Choose page"
 msgstr "Elige la página"
 
-#: link_admin.php:318
+#: link_admin.php:315
 msgid "CodePen"
 msgstr "CodePen"
 
-#: link_admin.php:166
+#: link_admin.php:165
 msgid "Color Template"
 msgstr "Plantilla de colores"
 
@@ -35,47 +35,47 @@ msgstr "Plantilla de colores"
 msgid "Contact"
 msgstr "Contacto"
 
-#: link_admin.php:260
+#: link_admin.php:257
 msgid "DEV"
 msgstr "DEV"
 
-#: link_admin.php:359
+#: link_admin.php:356
 msgid "Email"
 msgstr "Email"
 
-#: link_admin.php:232
+#: link_admin.php:229
 msgid "Facebook"
 msgstr "Facebook"
 
-#: link_admin.php:421
+#: link_admin.php:419
 msgid "Facebook Pixel"
-msgstr ""
+msgstr "Facebook Pixel"
 
-#: link_admin.php:112
+#: link_admin.php:111
 msgid "General setting"
 msgstr "Configuración general"
 
-#: link_admin.php:269
+#: link_admin.php:266
 msgid "GitHub"
 msgstr "GitHub"
 
-#: link_admin.php:403
+#: link_admin.php:401
 msgid "Google Analytics ID"
 msgstr "Google Analytics ID"
 
-#: link_admin.php:397
+#: link_admin.php:395
 msgid "Google Analytics | Google Tag Manager | Facebook Pixel"
 msgstr "Google Analytics | Google Tag Manager | Facebook Pixel"
 
-#: link_admin.php:412
+#: link_admin.php:410
 msgid "Google Tag Manager"
 msgstr "Google Tag Manager"
 
-#: link_admin.php:354
+#: link_admin.php:351
 msgid "here"
 msgstr "Aquí"
 
-#: link_admin.php:352
+#: link_admin.php:349
 msgid "How to create WhatsApp link"
 msgstr "Cómo crear un enlace de WhatsApp"
 
@@ -87,7 +87,7 @@ msgstr "https://renzotejada.com/"
 msgid "https://renzotejada.com/multi-link-in-bio-para-wordpress/"
 msgstr "https://renzotejada.com/multi-link-in-bio-para-wordpress/"
 
-#: link_admin.php:241
+#: link_admin.php:238
 msgid "Instagram"
 msgstr "Instagram"
 
@@ -95,7 +95,7 @@ msgstr "Instagram"
 msgid "Link in Bio"
 msgstr "Enlace en la biografía"
 
-#: link_admin.php:289
+#: link_admin.php:286
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
@@ -112,11 +112,11 @@ msgstr ""
 "comunicación externos de una empresa, que pueden ser otras redes sociales o "
 "sitios web."
 
-#: link_admin.php:226
+#: link_admin.php:223
 msgid "Links Sociales"
 msgstr "Enlaces sociales"
 
-#: link_admin.php:299
+#: link_admin.php:296
 msgid "Medium"
 msgstr "Medium"
 
@@ -129,15 +129,15 @@ msgstr "Multi Link in Bio"
 msgid "Renzo Tejada"
 msgstr "Renzo Tejada"
 
-#: link_admin.php:196 link_admin.php:371 link_admin.php:434
+#: link_admin.php:196 link_admin.php:369 link_admin.php:433
 msgid "Save changes"
 msgstr "Guardar cambios"
 
-#: link_admin.php:182
+#: link_admin.php:181
 msgid "Select Color"
 msgstr "Selecciona el color"
 
-#: link_admin.php:139
+#: link_admin.php:138
 msgid "Select page"
 msgstr "Selecciona la página"
 
@@ -145,11 +145,11 @@ msgstr "Selecciona la página"
 msgid "Settings"
 msgstr "Ajustes"
 
-#: link_admin.php:279
+#: link_admin.php:276
 msgid "StackOverflow"
 msgstr "StackOverflow"
 
-#: link_admin.php:158
+#: link_admin.php:157
 msgid "Sub Title"
 msgstr "Subtítulo"
 
@@ -157,30 +157,26 @@ msgstr "Subtítulo"
 msgid "Support"
 msgstr "Soporte"
 
-#: link_admin.php:150
+#: link_admin.php:149
 msgid "Title"
 msgstr "Título"
 
-#: link_admin.php:396
+#: link_admin.php:40 link_admin.php:394
 msgid "Tracking"
 msgstr "Seguimiento"
 
-#: link_admin.php:40
-msgid "tracking"
-msgstr "seguimiento "
-
-#: link_admin.php:250
+#: link_admin.php:247
 msgid "Twitter"
 msgstr "Twitter"
 
-#: link_admin.php:337
+#: link_admin.php:334
 msgid "Web"
 msgstr "Web"
 
-#: link_admin.php:346
+#: link_admin.php:343
 msgid "WhatsApp"
 msgstr "WhatsApp"
 
-#: link_admin.php:328
+#: link_admin.php:325
 msgid "WordPress"
 msgstr "WordPress"

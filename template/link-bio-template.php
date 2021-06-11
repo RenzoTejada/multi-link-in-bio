@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+    <?php wp_head(); ?>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo the_title() . ' | ' . get_bloginfo() ?></title>
     <link rel="icon" href="favicon.ico" type="image/png"/>
-    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi|Roboto:300" rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo plugins_url('css/reset.css', __FILE__) ?>">
-    <link rel="stylesheet" href="<?php echo plugins_url('css/styles.css', __FILE__) ?>">
-    <link rel="stylesheet"
-          href="<?php echo plugins_url('css/themes/' . get_option('link_setting_color') . '.css', __FILE__) ?>">
+
     <?php
     $link_ga = get_option( 'link_ga' );
     if ( $link_ga ) :
@@ -96,14 +91,15 @@
             if (get_option('link_' . $key)) {
                 ?>
                 <a target="_blank"
-                   href="<?php echo ($key == 'email') ? 'mailto:' : ''; ?><?php echo get_option('link_' . $key); ?>"><i
-                            title="<?php echo $key; ?>" class="<?php echo $icon; ?>"></i></a>
+                   href="<?php echo esc_html( ($key == 'email') ? 'mailto:' : ''); ?><?php  echo esc_html(get_option('link_' . $key)); ?>"><i
+                            title="<?php echo esc_html( $key ); ?>" class="<?php echo esc_html($icon); ?>"></i></a>
                 <?php
             }
         }
         ?>
     </h3>
 </main>
+<?php wp_footer(); ?>
 </body>
 </html>
 
