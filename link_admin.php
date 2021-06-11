@@ -138,7 +138,7 @@ function rt_link_submenu_settings_general()
                         <option value=""><?php _e('Select page', 'link-bio') ?></option>
                         <?php foreach ($all_page as $page) {
                             $selected = ($page->ID == $page_link_id) ? 'selected' : ''; ?>
-                            <option value="<?php echo esc_html( $page->ID ); ?>" <?php echo esc_html ( $selected ); ?>><?php echo esc_html( $page->post_title ); ?></option>
+                            <option value="<?php echo esc_html($page->ID); ?>" <?php echo esc_html($selected); ?>><?php echo esc_html($page->post_title); ?></option>
                             <?php
                         } ?>
                     </select>
@@ -148,7 +148,8 @@ function rt_link_submenu_settings_general()
                 <th scope="row">
                     <label><?php _e('Title', 'link-bio') ?></label></th>
                 <td>
-                    <input name="title_link" type="text" id="title_link" value="<?php echo esc_html( $page_link_title ); ?>"
+                    <input name="title_link" type="text" id="title_link"
+                           value="<?php echo esc_html($page_link_title); ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -156,7 +157,8 @@ function rt_link_submenu_settings_general()
                 <th scope="row">
                     <label><?php _e('Sub Title', 'link-bio') ?></label></th>
                 <td>
-                    <input name="subtitle_link" type="text" id="subtitle_link" value="<?php echo esc_html( $page_link_subtitle ); ?>"
+                    <input name="subtitle_link" type="text" id="subtitle_link"
+                           value="<?php echo esc_html($page_link_subtitle); ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -181,7 +183,7 @@ function rt_link_submenu_settings_general()
                         <option value=""><?php _e('Select Color', 'link-bio') ?></option>
                         <?php foreach ($colors as $key => $color) {
                             $selected = ($key == $page_link_color) ? 'selected' : ''; ?>
-                            <option value="<?php echo esc_html( $key ); ?>" <?php echo esc_html( $selected); ?>><?php echo esc_html( $color); ?></option>
+                            <option value="<?php echo esc_html($key); ?>" <?php echo esc_html($selected); ?>><?php echo esc_html($color); ?></option>
                             <?php
                         } ?>
                     </select>
@@ -229,7 +231,7 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('Facebook', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="link_fb" type="text" id="link_fb" value="<?php echo get_option('link_fb') ?>"
+                    <input name="link_fb" type="text" id="link_fb" value="<?php echo esc_html(get_option('link_fb')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -238,7 +240,7 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('Instagram', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="link_ig" type="text" id="link_ig" value="<?php echo get_option('link_ig') ?>"
+                    <input name="link_ig" type="text" id="link_ig" value="<?php echo esc_html(get_option('link_ig')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -248,7 +250,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="link_twitter" type="text" id="link_twitter"
-                           value="<?php echo get_option('link_twitter') ?>"
+                           value="<?php echo esc_html(get_option('link_twitter')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -257,7 +259,8 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('DEV', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="link_dev" type="text" id="link_dev" value="<?php echo get_option('link_dev') ?>"
+                    <input name="link_dev" type="text" id="link_dev"
+                           value="<?php echo esc_html(get_option('link_dev')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -267,7 +270,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="link_github" type="text" id="link_github"
-                           value="<?php echo get_option('link_github') ?>"
+                           value="<?php echo esc_html(get_option('link_github')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -277,7 +280,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="link_stackoverflow" type="text" id="link_stackoverflow"
-                           value="<?php echo get_option('link_stackoverflow') ?>"
+                           value="<?php echo esc_html(get_option('link_stackoverflow')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -287,7 +290,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="link_linkedin" type="text" id="link_linkedin"
-                           value="<?php echo get_option('link_linkedin') ?>"
+                           value="<?php echo esc_html(get_option('link_linkedin')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -296,7 +299,8 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('Medium', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="fb_link" type="text" id="link_medium" value="<?php echo get_option('link_medium') ?>"
+                    <input name="fb_link" type="text" id="link_medium"
+                           value="<?php echo esc_html(get_option('link_medium')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -306,7 +310,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="link_behance" type="text" id="link_behance"
-                           value="<?php echo get_option('link_behance') ?>"
+                           value="<?php echo esc_html(get_option('link_behance')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -316,7 +320,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="link_codepen" type="text" id="link_codepen"
-                           value="<?php echo get_option('link_codepen') ?>"
+                           value="<?php echo esc_html(get_option('link_codepen')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -325,7 +329,7 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('WordPress', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="link_wp" type="text" id="link_wp" value="<?php echo get_option('link_wp') ?>"
+                    <input name="link_wp" type="text" id="link_wp" value="<?php echo esc_html(get_option('link_wp')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -334,7 +338,8 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('Web', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="link_web" type="text" id="link_web" value="<?php echo get_option('link_web') ?>"
+                    <input name="link_web" type="text" id="link_web"
+                           value="<?php echo esc_html(get_option('link_web')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -343,7 +348,7 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('WhatsApp', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="link_wa" type="text" id="link_wa" value="<?php echo get_option('link_wa') ?>"
+                    <input name="link_wa" type="text" id="link_wa" value="<?php echo esc_html(get_option('link_wa')) ?>"
                            class="regular-text ltr">
                     <p class="description"
                        id="tagline-description"><?php _e('How to create WhatsApp link', 'link-bio') ?> <a
@@ -356,7 +361,8 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('Email', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="link_email" type="text" id="link_email" value="<?php echo get_option('link_email') ?>"
+                    <input name="link_email" type="text" id="link_email"
+                           value="<?php echo esc_html(get_option('link_email')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -401,7 +407,7 @@ function rt_link_submenu_settings_tracking()
                     <label><?php _e('Google Analytics ID', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="link_ga" type="text" id="link_ga" value="<?php echo get_option('link_ga') ?>"
+                    <input name="link_ga" type="text" id="link_ga" value="<?php echo esc_html(get_option('link_ga')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -410,7 +416,8 @@ function rt_link_submenu_settings_tracking()
                     <label><?php _e('Google Tag Manager', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="link_gtm" type="text" id="link_gtm" value="<?php echo get_option('link_gtm') ?>"
+                    <input name="link_gtm" type="text" id="link_gtm"
+                           value="<?php echo esc_html(get_option('link_gtm')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -420,7 +427,7 @@ function rt_link_submenu_settings_tracking()
                 </th>
                 <td>
                     <input name="link_fbp" type="text" id="link_fbp"
-                           value="<?php echo get_option('link_fbp') ?>"
+                           value="<?php echo esc_html(get_option('link_fbp')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
