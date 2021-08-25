@@ -1,9 +1,9 @@
 === Multi Link in Bio ===
 Contributors: renzotejada
-Tags: link-bio, linktree, bio, instagram, onepage
+Tags: link-bio, link in bio, bio, onepage
 Requires at least: 5.2
-Tested up to: 5.7.2
-Stable tag: trunk
+Tested up to: 5.8
+Stable tag: 0.0.7
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -85,6 +85,9 @@ Manual FTP installation
 3. Multi link in bio Menu
 
 == Changelog ==
+
+= 0.0.7 (24/08/2021) =
+Fix: eliminando texto o imagen contra derecho de marca de FB.
 
 = 0.0.6 (14/06/2021) =
 Fix: validando versión WC 5.4.1
