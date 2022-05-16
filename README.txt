@@ -1,9 +1,9 @@
 === Multi Link in Bio ===
-Contributors: renzotejada
+Contributors: renzotejada, drplugins
 Tags: link-bio, link in bio, bio, onepage
 Requires at least: 5.2
-Tested up to: 5.8
-Stable tag: 0.0.7
+Tested up to: 6.0
+Stable tag: trunk
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -85,6 +85,10 @@ Manual FTP installation
 3. Multi link in bio Menu
 
 == Changelog ==
+
+= 0.0.8 (16/05/2022) =
+Fix: validando versión WC 6.5.1
+Fix: validando versión WP 6.0
 
 = 0.0.7 (24/08/2021) =
 Fix: eliminando texto o imagen contra derecho de marca de FB.
