@@ -231,7 +231,7 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('Facebook', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="rt_multi_link_fb" type="text" id="rt_multi_link_fb" value="<?php echo esc_html(get_option('rt_multi_link__fb')) ?>"
+                    <input name="rt_multi_link_fb" type="text" id="rt_multi_link_fb" value="<?php echo esc_html(get_option('rt_multi_link_fb')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>

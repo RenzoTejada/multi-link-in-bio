@@ -88,7 +88,7 @@
         );
 
         foreach ($links_rs as $key => $icon) {
-            if (get_option('link_' . $key)) {
+            if (get_option('rt_multi_link_' . $key)) {
                 ?>
                 <a target="_blank"
                    href="<?php echo esc_html( ($key == 'email') ? 'mailto:' : ''); ?><?php  echo esc_html(get_option('link_' . $key)); ?>"><i

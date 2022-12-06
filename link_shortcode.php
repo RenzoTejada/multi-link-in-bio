@@ -8,7 +8,7 @@ function rt_link_front_scripts()
     wp_enqueue_style('rt-link-fontawesome-css', 'https://use.fontawesome.com/releases/v5.12.0/css/all.css');
     wp_enqueue_style('rt-link-bio-reset-css', plugin_dir_url(__FILE__) . 'template/css/reset.css');
     wp_enqueue_style('rt-link-bio-styles-css', plugin_dir_url(__FILE__) . 'template/css/styles.css');
-    wp_enqueue_style('rt-link-color-css', plugin_dir_url(__FILE__) . 'template/css/themes/' . get_option('link_setting_color') . '.css');
+    wp_enqueue_style('rt-link-color-css', plugin_dir_url(__FILE__) . 'template/css/themes/' . get_option('rt_multi_link_setting_color') . '.css');
 }
 
 add_action('wp_enqueue_scripts', 'rt_link_front_scripts');
@@ -20,7 +20,7 @@ function rt_link_bio_template($template)
     if (!rt_link_is_endpoint()) {
         return $template;
     }
-    $page_link_id = get_option('link_setting_page');
+    $page_link_id = get_option('rt_multi_link_setting_page');
 
     if (is_page($page_link_id)) {
         $template = plugin_dir_path(__FILE__) . 'template/link-bio-template.php';
@@ -37,7 +37,7 @@ function rt_link_remove_all_styles()
 function rt_link_is_endpoint()
 {
     global $wp_query;
-    $slug = get_option('link_setting_page');
+    $slug = get_option('rt_multi_link_setting_page');
     $link_endpoint = get_post_field('post_name', $slug);
     if (isset($wp_query->query_vars['name'])) {
         return $link_endpoint === $wp_query->query_vars['name'];
