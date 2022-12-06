@@ -87,6 +87,9 @@ Manual FTP installation
 
 == Changelog ==
 
+= 0.1.0 (06/12/2022) =
+fix: corrigiendo error de guardar links y shortcode
+
 = 0.0.9 (06/12/2022) =
 Fix: validando versión WC 7.1.0
 Fix: validando versión WP 6.1.1
