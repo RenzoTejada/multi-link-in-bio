@@ -87,6 +87,10 @@ Manual FTP installation
 
 == Changelog ==
 
+= 0.1.2 (26/03/2024) =
+Fix: validando versión WC 8.7.0
+Fix: validando versión WP 6.4.3
+
 = 0.1.1 (22/03/2024) =
 Fix: validando versión WC 8.7.0
 Fix: validando versión WP 6.4.3
