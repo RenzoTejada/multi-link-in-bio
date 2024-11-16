@@ -2,7 +2,7 @@
 Contributors: renzotejada, drplugins, alexistejada
 Tags: link-bio, link in bio, bio, onepage
 Requires at least: 5.2
-Tested up to: 6.5
+Tested up to: 6.7
 Stable tag: trunk
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -86,6 +86,10 @@ Manual FTP installation
 3. Multi link in bio Menu
 
 == Changelog ==
+
+= 0.1.4 (15/11/2024) =
+Fix: validando versión WC 9.4.1
+Fix: validando versión WP 6.7
 
 = 0.1.3 (05/04/2024) =
 Fix: validando versión WC 8.7.0
