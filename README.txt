@@ -3,7 +3,7 @@ Contributors: renzotejada, huakotech, alexistejada
 Tags: link-bio, link in bio, bio, onepage
 Requires at least: 6.2
 Tested up to: 6.7.1
-Stable tag: 0.4
+Stable tag: 0.5
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -86,6 +86,9 @@ Manual FTP installation
 3. Multi link in bio Menu
 
 == Changelog ==
+
+= 0.5 (16/01/2025) =
+Fix: ignorando archivos
 
 = 0.4 (16/01/2025) =
 Fix: Remove dir and files
