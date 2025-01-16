@@ -3,16 +3,12 @@ Contributors: renzotejada, huakotech, alexistejada
 Tags: link-bio, link in bio, bio, onepage
 Requires at least: 6.2
 Tested up to: 6.7.1
-Stable tag: 0.5
+Stable tag: 0.6
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin  links can be added that redirect the user to a company's external communication channels, which can be other social networks or websites.
-
-Add the **Multi link in Bio** to the WordPress.
-
-You will find this same information in the readme.txt of the plugin and on our website https://renzotejada.com
 
 == Description ==
 
@@ -86,6 +82,9 @@ Manual FTP installation
 3. Multi link in bio Menu
 
 == Changelog ==
+
+= 0.6 (16/01/2025) =
+Fix: Actualizando short description
 
 = 0.5 (16/01/2025) =
 Fix: ignorando archivos
