@@ -91,7 +91,7 @@
             if (get_option('rt_multi_link_' . $key)) {
                 ?>
                 <a target="_blank"
-                   href="<?php echo esc_html( ($key == 'email') ? 'mailto:' : ''); ?><?php  echo esc_html(get_option('rt_multi_link_' . $key)); ?>"><i
+                   href="<?php echo esc_url(($key === 'email' ? 'mailto:' : '') . get_option('rt_multi_link_' . $key)); ?>" rel="noopener noreferrer"><i
                             title="<?php echo esc_html( $key ); ?>" class="<?php echo esc_html($icon); ?>"></i></a>
                 <?php
             }

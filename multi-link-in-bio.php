@@ -9,15 +9,16 @@
  * Plugin Name:       Multi Link in Bio
  * Plugin URI:        https://renzotejada.com/multi-link-in-bio-para-wordpress/
  * Description:       links can be added that redirect the user to a company's external communication channels, which can be other social networks or websites.
- * Version:           0.6
+ * Version:           0.7.0
  * Author:            Renzo Tejada
  * Author URI:        https://renzotejada.com/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       link-bio
  * Domain Path:       /language
- * WC tested up to:   9.5.2
- * WC requires at least: 2.6
+ * Requires at least: 6.2
+ * Tested up to:     7.1.4
+ * Requires PHP:     7.4
  */
 if (!defined('ABSPATH')) {
     exit;
@@ -43,7 +44,7 @@ add_action('init', 'rt_link_bio_load_textdomain');
 
 function rt_link_add_plugin_page_settings_link($links)
 {
-    $links2[] = '<a href="' . admin_url('admin.php?page=link_settings') . '">' . __('Settings', 'link-bio') . '</a>';
+    $links2[] = '<a href="' . esc_url(admin_url('admin.php?page=link_settings')) . '">' . esc_html__('Settings', 'link-bio') . '</a>';
     $links = array_merge($links2, $links);
     return $links;
 }
@@ -77,3 +78,9 @@ require dirname(__FILE__) . "/link_admin.php";
  */
 require dirname(__FILE__) . "/link_shortcode.php";
 
+
+// Only load admin UI assets on this plugin's screen.
+add_action('admin_enqueue_scripts', function ($hook) {
+    if (strpos((string) $hook, 'link_settings') === false) { return; }
+    wp_enqueue_style('rt-link-admin-ui', plugin_dir_url(__FILE__) . 'assets/admin.css', array(), Version_RT_Link_Bio);
+});

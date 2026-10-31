@@ -18,29 +18,33 @@ function rt_link_register_admin_page()
 function rt_link_submenu_settings_callback()
 {
     if (current_user_can('manage_options')) {
+        $tab = isset($_GET['tab']) ? sanitize_key(wp_unslash($_GET['tab'])) : 'setting';
+        if (!in_array($tab, array('setting','links','tracking'), true)) { $tab = 'setting'; }
         ?>
         <div class="wrap woocommerce">
-            <div style="background-color:#87b43e;">
+            <div class="rt-link-header">
+              <div class="rt-link-identity"><img src="<?php echo esc_url(plugin_dir_url(__FILE__) . 'assets/logo-rt.png'); ?>" alt="Renzo Tejada" /></div>
+              <div class="rt-link-headline"><h1>Multi Link in Bio <small>v<?php echo esc_html(Version_RT_Link_Bio); ?></small></h1><p>Administra tu página de enlaces, redes sociales y seguimiento desde un solo lugar.</p></div>
+              <a class="button rt-link-contact" target="_blank" rel="noopener noreferrer" href="https://renzotejada.com/contacto/">Contacto y soporte</a>
             </div>
-            <h1><?php _e('Multi Link in Bio', 'link-bio') ?></h1>
-            <hr>
 
             <h2 class="nav-tab-wrapper">
                 <a href="?page=link_settings&tab=setting" class="nav-tab <?php
-                if ((!isset($_REQUEST['tab'])) || ($_REQUEST['tab'] == "setting")) {
+                if ($tab === 'setting') {
                     print " nav-tab-active";
                 } ?>"><?php _e('Settings', 'link-bio') ?></a>
                 <a href="?page=link_settings&tab=links" class="nav-tab <?php
-                if (($_REQUEST['tab'] == "links")) {
+                if ($tab === 'links') {
                     print " nav-tab-active";
                 } ?>"><?php _e('Links', 'link-bio') ?></a>
                 <a href="?page=link_settings&tab=tracking" class="nav-tab <?php
-                if (($_REQUEST['tab'] == "tracking")) {
+                if ($tab === 'tracking') {
                     print " nav-tab-active";
                 } ?>"><?php _e('Tracking', 'link-bio') ?></a>
             </h2>
             <?php
-            switch ($_REQUEST['tab']) {
+            echo '<div class="rt-link-panel">';
+            switch ($tab) {
                 case 'links':
                     rt_link_submenu_settings_links();
                     break;
@@ -52,6 +56,7 @@ function rt_link_submenu_settings_callback()
                     rt_link_submenu_settings_general();
                     break;
             }
+            echo '</div>';
             ?>
         </div>
         <?php
@@ -66,39 +71,39 @@ function rt_link_submenu_settings_general()
         $page_link_subtitle = get_option('rt_multi_link_setting_subtitle');
         $page_link_color = get_option('rt_multi_link_setting_color');
         if ($page_link_id) {
-            update_option('rt_multi_link_setting_page', sanitize_text_field($_POST["page_link"]));
+            update_option('rt_multi_link_setting_page', sanitize_text_field(wp_unslash(isset($_POST['page_link']) ? $_POST['page_link'] : '')));
         } else {
-            add_option('rt_multi_link_setting_page', sanitize_text_field($_POST["page_link"]));
+            add_option('rt_multi_link_setting_page', sanitize_text_field(wp_unslash(isset($_POST['page_link']) ? $_POST['page_link'] : '')));
             $page_link_id = get_option('rt_multi_link_setting_page');
             if (!$page_link_id) {
-                update_option('rt_multi_link_setting_page', sanitize_text_field($_POST["page_link"]));
+                update_option('rt_multi_link_setting_page', sanitize_text_field(wp_unslash(isset($_POST['page_link']) ? $_POST['page_link'] : '')));
             }
         }
         if ($page_link_title) {
-            update_option('rt_multi_link_setting_title', sanitize_text_field($_POST["title_link"]));
+            update_option('rt_multi_link_setting_title', sanitize_text_field(wp_unslash(isset($_POST['title_link']) ? $_POST['title_link'] : '')));
         } else {
-            add_option('rt_multi_link_setting_title', sanitize_text_field($_POST["title_link"]));
+            add_option('rt_multi_link_setting_title', sanitize_text_field(wp_unslash(isset($_POST['title_link']) ? $_POST['title_link'] : '')));
             $page_link_title = get_option('rt_multi_link_setting_title');
             if (!$page_link_title) {
-                update_option('rt_multi_link_setting_title', sanitize_text_field($_POST["title_link"]));
+                update_option('rt_multi_link_setting_title', sanitize_text_field(wp_unslash(isset($_POST['title_link']) ? $_POST['title_link'] : '')));
             }
         }
         if ($page_link_subtitle) {
-            update_option('rt_multi_link_setting_subtitle', sanitize_text_field($_POST["subtitle_link"]));
+            update_option('rt_multi_link_setting_subtitle', sanitize_text_field(wp_unslash(isset($_POST['subtitle_link']) ? $_POST['subtitle_link'] : '')));
         } else {
-            add_option('rt_multi_link_setting_subtitle', sanitize_text_field($_POST["subtitle_link"]));
+            add_option('rt_multi_link_setting_subtitle', sanitize_text_field(wp_unslash(isset($_POST['subtitle_link']) ? $_POST['subtitle_link'] : '')));
             $page_link_subtitle = get_option('rt_multi_link_setting_subtitle');
             if (!$page_link_subtitle) {
-                update_option('rt_multi_link_setting_subtitle', sanitize_text_field($_POST["subtitle_link"]));
+                update_option('rt_multi_link_setting_subtitle', sanitize_text_field(wp_unslash(isset($_POST['subtitle_link']) ? $_POST['subtitle_link'] : '')));
             }
         }
         if ($page_link_color) {
-            update_option('rt_multi_link_setting_color', sanitize_text_field($_POST["color_link"]));
+            update_option('rt_multi_link_setting_color', sanitize_text_field(wp_unslash(isset($_POST['color_link']) ? $_POST['color_link'] : '')));
         } else {
-            add_option('rt_multi_link_setting_color', sanitize_text_field($_POST["color_link"]));
+            add_option('rt_multi_link_setting_color', sanitize_text_field(wp_unslash(isset($_POST['color_link']) ? $_POST['color_link'] : '')));
             $page_link_color = get_option('rt_multi_link_setting_color');
             if (!$page_link_color) {
-                update_option('rt_multi_link_setting_color', sanitize_text_field($_POST["color_link"]));
+                update_option('rt_multi_link_setting_color', sanitize_text_field(wp_unslash(isset($_POST['color_link']) ? $_POST['color_link'] : '')));
             }
         }
     }
@@ -212,11 +217,11 @@ function rt_link_submenu_settings_links()
 
         foreach ($links_rs as $link) {
             if (get_option('rt_multi_link_' . $link)) {
-                update_option("rt_multi_link_" . $link, sanitize_text_field($_POST["rt_multi_link_" . $link]));
+                update_option("rt_multi_link_" . $link, ($link === 'email' ? sanitize_email(wp_unslash(isset($_POST['rt_multi_link_email']) ? $_POST['rt_multi_link_email'] : '')) : esc_url_raw(wp_unslash(isset($_POST['rt_multi_link_' . $link]) ? $_POST['rt_multi_link_' . $link] : ''))));
             } else {
-                add_option("rt_multi_link_" . $link, sanitize_text_field($_POST["rt_multi_link_" . $link]));
+                add_option("rt_multi_link_" . $link, ($link === 'email' ? sanitize_email(wp_unslash(isset($_POST['rt_multi_link_email']) ? $_POST['rt_multi_link_email'] : '')) : esc_url_raw(wp_unslash(isset($_POST['rt_multi_link_' . $link]) ? $_POST['rt_multi_link_' . $link] : ''))));
                 if (!get_option('rt_multi_link_' . $link)) {
-                    update_option("rt_multi_link_" . $link, sanitize_text_field($_POST["rt_multi_link_" . $link]));
+                    update_option("rt_multi_link_" . $link, ($link === 'email' ? sanitize_email(wp_unslash(isset($_POST['rt_multi_link_email']) ? $_POST['rt_multi_link_email'] : '')) : esc_url_raw(wp_unslash(isset($_POST['rt_multi_link_' . $link]) ? $_POST['rt_multi_link_' . $link] : ''))));
                 }
             }
         }
@@ -231,7 +236,7 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('Facebook', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="rt_multi_link_fb" type="text" id="rt_multi_link_fb" value="<?php echo esc_html(get_option('rt_multi_link_fb')) ?>"
+                    <input name="rt_multi_link_fb" type="text" id="rt_multi_link_fb" value="<?php echo esc_attr(get_option('rt_multi_link_fb')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -240,7 +245,7 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('Instagram', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="rt_multi_link_ig" type="text" id="rt_multi_link_ig" value="<?php echo esc_html(get_option('rt_multi_link_ig')) ?>"
+                    <input name="rt_multi_link_ig" type="text" id="rt_multi_link_ig" value="<?php echo esc_attr(get_option('rt_multi_link_ig')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -250,7 +255,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="rt_multi_link_twitter" type="text" id="rt_multi_link_twitter"
-                           value="<?php echo esc_html(get_option('rt_multi_link_twitter')) ?>"
+                           value="<?php echo esc_attr(get_option('rt_multi_link_twitter')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -260,7 +265,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="rt_multi_link_dev" type="text" id="rt_multi_link_dev"
-                           value="<?php echo esc_html(get_option('rt_multi_link_dev')) ?>"
+                           value="<?php echo esc_attr(get_option('rt_multi_link_dev')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -270,7 +275,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="rt_multi_link_github" type="text" id="rt_multi_link_github"
-                           value="<?php echo esc_html(get_option('rt_multi_link_github')) ?>"
+                           value="<?php echo esc_attr(get_option('rt_multi_link_github')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -280,7 +285,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="rt_multi_link_stackoverflow" type="text" id="rt_multi_link_stackoverflow"
-                           value="<?php echo esc_html(get_option('rt_multi_link_stackoverflow')) ?>"
+                           value="<?php echo esc_attr(get_option('rt_multi_link_stackoverflow')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -290,7 +295,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="rt_multi_link_linkedin" type="text" id="rt_multi_link_linkedin"
-                           value="<?php echo esc_html(get_option('rt_multi_link_linkedin')) ?>"
+                           value="<?php echo esc_attr(get_option('rt_multi_link_linkedin')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -299,8 +304,8 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('Medium', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="rt_multi_link_link" type="text" id="rt_multi_link_medium"
-                           value="<?php echo esc_html(get_option('rt_multi_link_medium')) ?>"
+                    <input name="rt_multi_link_medium" type="text" id="rt_multi_link_medium"
+                           value="<?php echo esc_attr(get_option('rt_multi_link_medium')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -310,7 +315,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="rt_multi_link_behance" type="text" id="rt_multi_link_behance"
-                           value="<?php echo esc_html(get_option('rt_multi_link_behance')) ?>"
+                           value="<?php echo esc_attr(get_option('rt_multi_link_behance')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -320,7 +325,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="rt_multi_link_codepen" type="text" id="rt_multi_link_codepen"
-                           value="<?php echo esc_html(get_option('rt_multi_link_codepen')) ?>"
+                           value="<?php echo esc_attr(get_option('rt_multi_link_codepen')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -329,7 +334,7 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('WordPress', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="rt_multi_link_wp" type="text" id="rt_multi_link_wp" value="<?php echo esc_html(get_option('rt_multi_link_wp')) ?>"
+                    <input name="rt_multi_link_wp" type="text" id="rt_multi_link_wp" value="<?php echo esc_attr(get_option('rt_multi_link_wp')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -339,7 +344,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="rt_multi_link_web" type="text" id="rt_multi_link_web"
-                           value="<?php echo esc_html(get_option('rt_multi_link_web')) ?>"
+                           value="<?php echo esc_attr(get_option('rt_multi_link_web')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -348,7 +353,7 @@ function rt_link_submenu_settings_links()
                     <label><?php _e('WhatsApp', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="rt_multi_link_wa" type="text" id="rt_multi_link_wa" value="<?php echo esc_html(get_option('rt_multi_link_wa')) ?>"
+                    <input name="rt_multi_link_wa" type="text" id="rt_multi_link_wa" value="<?php echo esc_attr(get_option('rt_multi_link_wa')) ?>"
                            class="regular-text ltr">
                     <p class="description"
                        id="tagline-description"><?php _e('How to create WhatsApp link', 'link-bio') ?> <a
@@ -362,7 +367,7 @@ function rt_link_submenu_settings_links()
                 </th>
                 <td>
                     <input name="rt_multi_link_email" type="text" id="rt_multi_link_email"
-                           value="<?php echo esc_html(get_option('rt_multi_link_email')) ?>"
+                           value="<?php echo esc_attr(get_option('rt_multi_link_email')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -387,11 +392,11 @@ function rt_link_submenu_settings_tracking()
 
         foreach ($trackings as $code) {
             if (get_option('rt_multi_link_' . $code)) {
-                update_option("rt_multi_link_" . $code, sanitize_text_field($_POST["rt_multi_link_" . $code]));
+                update_option("rt_multi_link_" . $code, sanitize_text_field(wp_unslash(isset($_POST['rt_multi_link_' . $code]) ? $_POST['rt_multi_link_' . $code] : '')));
             } else {
-                add_option("rt_multi_link_" . $code, sanitize_text_field($_POST["rt_multi_link_" . $code]));
+                add_option("rt_multi_link_" . $code, sanitize_text_field(wp_unslash(isset($_POST['rt_multi_link_' . $code]) ? $_POST['rt_multi_link_' . $code] : '')));
                 if (!get_option('rt_multi_link_' . $code)) {
-                    update_option("rt_multi_link_" . $code, sanitize_text_field($_POST["rt_multi_link_" . $code]));
+                    update_option("rt_multi_link_" . $code, sanitize_text_field(wp_unslash(isset($_POST['rt_multi_link_' . $code]) ? $_POST['rt_multi_link_' . $code] : '')));
                 }
             }
         }
@@ -407,7 +412,7 @@ function rt_link_submenu_settings_tracking()
                     <label><?php _e('Google Analytics ID', 'link-bio') ?></label>
                 </th>
                 <td>
-                    <input name="rt_multi_link_ga" type="text" id="rt_multi_link_ga" value="<?php echo esc_html(get_option('rt_multi_link_ga')) ?>"
+                    <input name="rt_multi_link_ga" type="text" id="rt_multi_link_ga" value="<?php echo esc_attr(get_option('rt_multi_link_ga')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -417,7 +422,7 @@ function rt_link_submenu_settings_tracking()
                 </th>
                 <td>
                     <input name="rt_multi_link_gtm" type="text" id="rt_multi_link_gtm"
-                           value="<?php echo esc_html(get_option('rt_multi_link_gtm')) ?>"
+                           value="<?php echo esc_attr(get_option('rt_multi_link_gtm')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>
@@ -427,7 +432,7 @@ function rt_link_submenu_settings_tracking()
                 </th>
                 <td>
                     <input name="rt_multi_link_fbp" type="text" id="rt_multi_link_fbp"
-                           value="<?php echo esc_html(get_option('rt_multi_link_fbp')) ?>"
+                           value="<?php echo esc_attr(get_option('rt_multi_link_fbp')) ?>"
                            class="regular-text ltr">
                 </td>
             </tr>

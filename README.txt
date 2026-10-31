@@ -2,17 +2,20 @@
 Contributors: renzotejada, huakotech, alexistejada
 Tags: link-bio, link in bio, bio, onepage
 Requires at least: 6.2
-Tested up to: 6.7.1
-Stable tag: 0.6
+Tested up to: 7.1.4
+Stable tag: 0.7.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin  links can be added that redirect the user to a company's external communication channels, which can be other social networks or websites.
+Create a dedicated, responsive link-in-bio page in WordPress with social links, visual themes and optional analytics IDs.
 
 == Description ==
 
-This plugin  links can be added that redirect the user to a company's external communication channels, which can be other social networks or websites.
+Multi Link in Bio adds a standalone page for your website, social profiles and other channels. Set the page, title, subtitle and theme in Settings; add social profile links in Links, and optional GA/GTM/Meta Pixel IDs in Tracking. This is a WordPress plugin and does not require WooCommerce. Existing settings are preserved when upgrading.
+
+
+Create a dedicated, responsive link-in-bio page in WordPress with social links, visual themes and optional analytics IDs.
 Add the **Multi link in Bio** to the WordPress.
 
 
@@ -45,6 +48,15 @@ For additional functionality, check out our companion plugin, such as:
 
 Visit our [plugins overview page](https://renzotejada.com/categoria-producto/plugins/) for more information.
 
+
+== Changelog ==
+
+= 0.7.0 =
+* Refreshed responsive WordPress admin interface with official RT branding.
+* Improved input handling, link sanitization and HTML escaping.
+* Fixed the Medium field name and invalid-tab handling.
+* Added a safe fallback for page theme selection.
+* Preserved all previously saved settings.
 
 == Installation ==
 
